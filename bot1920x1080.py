@@ -24,6 +24,9 @@ def voteThird(urlBBB):
     votes = 0
 
     while(1):
+        
+        clicks = 0
+
         #Move and click in the person icon
         moveAndClick(925, 850, 1, 1)
 
@@ -31,9 +34,16 @@ def voteThird(urlBBB):
         moveAndClick(840, 1010, 1, 0.3)
 
         #Move to vote again
-        moveAndClick(1107, 459, 13, 0.3)
+        moveAndClick(1107, 449, 3, 0.3)
 
         votes +=1
+        clicks += 1
+        
+        if(clicks % 6 == 0):
+            #Clear Cookies
+            pyautogui.hotkey('ctrl', 'shift', 'r')
+            time.sleep(2)
+        
         print("Foram efetuados "+ str(votes) +" votos no terceiro participante!")
 
 #https://gshow.globo.com/realities/bbb/bbb21/votacao/paredao-bbb21-vote-para-eliminar-arthur-gilberto-ou-karol-conka-838ec4d5-7d17-4263-a335-29e13c3a769b.ghtml
